@@ -16,11 +16,11 @@ PX使用Etcd做集群发现。生产系统需要搭建**专用**的Etcd集群。
 
 ## 部署步骤
 
+px-etcd.sh在pxtools工具集中。如何获取pxtools请见”[环境准备](environment-preparation.md#pxtools)“。
+
 以下示例中，三台主机的PX存储网络的IP分别是： 10.10.176.161， 10.10.176.162， 10.10.176.163 
 
-### 1. 
-
-### 2. 部署第一个节点
+### 1. 部署第一个节点
 
 ```text
 $ bash pxtools/etcd/px-etcd.sh create 10.10.176.161
@@ -30,7 +30,7 @@ member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:
 cluster is healthy
 ```
 
-### 3. 部署第二个节点
+### 2. 部署第二个节点
 
 ```text
 $ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
@@ -41,7 +41,7 @@ member ac13a77dc0affc68 is healthy: got healthy result from http://10.10.176.162
 cluster is healthy
 ```
 
-### 4. 部署第三个节点
+### 3. 部署第三个节点
 
 ```text
 $ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
