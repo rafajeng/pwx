@@ -18,20 +18,12 @@ PX使用Etcd做集群发现。生产系统需要搭建**专用**的Etcd集群。
 
 以下示例中，三台主机的PX存储网络的IP分别是： 10.10.176.161， 10.10.176.162， 10.10.176.163 
 
-### 1. 下载pxtools脚本工具集
-
-```text
-$ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools
-'/pxtools' -> '/drop/pxtools'
-  
-$ ls -lh
-drwxr-xr-x  7 root root   78 Dec  2 18:26 pxtools
-```
+### 1. 
 
 ### 2. 部署第一个节点
 
 ```text
-$ bash pxtools-edit/etcd/px-etcd.sh create 10.10.176.161
+$ bash pxtools/etcd/px-etcd.sh create 10.10.176.161
 
 $ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
 member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
@@ -41,12 +33,24 @@ cluster is healthy
 ### 3. 部署第二个节点
 
 ```text
+$ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
 
+$ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
+member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
+member ac13a77dc0affc68 is healthy: got healthy result from http://10.10.176.162:19019
+cluster is healthy
 ```
 
 ### 4. 部署第三个节点
 
 ```text
+$ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
 
+$ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
+member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
+member 642c48a9ddf6fd84 is healthy: got healthy result from http://10.10.176.163:19019
+member ac13a77dc0affc68 is healthy: got healthy result from http://10.10.176.162:19019
 ```
+
+
 
