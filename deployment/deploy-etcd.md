@@ -17,7 +17,7 @@ PX使用Etcd做集群发现。生产系统需要搭建**专用**的Etcd集群。
 ## 部署步骤
 
 {% hint style="info" %}
-px-etcd.sh在**pxtools**工具集中。如何获取pxtools请见”[环境准备](environment-preparation.md#pxtools)“。
+px-etcd.sh在**pxtools**工具集中。如何获取pxtools请见”[环境准备](environment-preparation.md#pxtools-gong-ju-ji)“。
 {% endhint %}
 
 以下示例中，三台主机的PX存储网络的IP分别是： 10.10.176.161， 10.10.176.162， 10.10.176.163 
