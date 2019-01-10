@@ -4,6 +4,12 @@
 
 ## 操作系统
 
+此手册只适用于RHEL和CentOS，版本**7.2**以上。
+
+{% hint style="info" %}
+PX官方支持各种主流Linux发行版。如果需要支持，请联系道云。
+{% endhint %}
+
 ## 依赖包
 
 {% code-tabs %}
