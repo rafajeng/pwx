@@ -2,7 +2,7 @@
 
 ## 概述
 
-PX使用Etcd做集群发现。生产系统需要搭建专用的Etcd集群。道云提供**px-etcd.sh**脚本用于创建和维护专用的Etcd集群
+PX使用Etcd做集群发现。生产系统需要搭建**专用**的Etcd集群。道云提供**px-etcd.sh**脚本用于创建和维护专用的Etcd集群
 
 {% hint style="info" %}
 生产场景中，px-etcd.sh脚本必须在道云工程师的协助下使用
