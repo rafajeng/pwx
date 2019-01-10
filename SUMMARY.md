@@ -1,6 +1,6 @@
 # Table of contents
 
-* [道云PX用户手册](README.md)
+* [道云PX手册](README.md)
 * [概览](overview.md)
 * [部署](deployment/README.md)
   * [环境准备](deployment/environment-preparation.md)
@@ -17,4 +17,6 @@
 * [版本](releases.md)
 * [方案](solutions.md)
 * [API](api.md)
+* [FAQ](faq.md)
+* [知识库](kb.md)
 
