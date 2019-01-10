@@ -10,3 +10,5 @@ OpenStorage API文档：[http://api.openstorage.org/openstorage/index.html](http
 
 OpenStorage项目首页：[https://github.com/libopenstorage](https://github.com/libopenstorage)
 
+![](.gitbook/assets/image%20%281%29.png)
+
