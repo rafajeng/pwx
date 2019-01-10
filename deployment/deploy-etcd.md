@@ -14,7 +14,7 @@ PX使用Etcd做集群发现。生产系统需要搭建**专用**的Etcd集群。
 * 使用PX的数据网络作为PX-Etcd的Client网络和Peer网路。
 * 条件允许，可以把Etcd部署在非PX的节点上
 
-## 部署步骤
+## 步骤
 
 {% hint style="info" %}
 px-etcd.sh在**pxtools**工具集中。如何获取pxtools请见”[环境准备](environment-preparation.md#pxtools-gong-ju-ji)“。
