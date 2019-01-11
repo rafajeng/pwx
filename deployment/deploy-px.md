@@ -4,7 +4,7 @@
 
 ### 1. Daemonset <a id="daemonset"></a>
 
-PX在K8S环境中是用**daemonset**模式部署，整个部署过程完全容器化和自动化。所以要求用户在部署前对K8S有基础的知识积累。
+PX在K8S环境中是用**daemonset**模式部署，整个部署过程完全容器化和自动化。
 
 PX的daemonset里是oci-monitor容器。它是一个辅助功能的容器，只负责部署，启停和监控, 不负责实际的存储功能。oci-monitor容器会自动拉取和解压px-enteprise镜像，部署由systemd控制的px-runc容器。整体控制流如下：
 
@@ -21,7 +21,7 @@ Daemonset使用yaml文件定义，建议使用pxtools工具集里的**px-yaml.sh
 PX对K8S CSI的支持目前处在“技术预览\(technical preview\)"状态，所以此章节的部署模式**不支持CSI**。
 
 {% hint style="info" %}
-如果需要预览PX对K8S CSI的支持，请参阅章节”[K8S CSI](other-scenarios/k8s-csi.md)“
+如果需要预览PX对K8S CSI的支持，请参考章节”[K8S CSI](other-scenarios/k8s-csi.md)“
 {% endhint %}
 
 ## 步骤 <a id="steps"></a>
@@ -64,7 +64,7 @@ PX的所有运行参数请参见本章”附录“
 {% endhint %}
 
 {% hint style="warning" %}
-Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不一致的节点，请参阅章节“[添加节点](../kuo-rong/add-nodes.md)“
+Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不一致的节点，请参考章节“[添加节点](../kuo-rong/add-nodes.md)“
 {% endhint %}
 
 ### 2. 创建yaml文件 <a id="step-2-yamls"></a>

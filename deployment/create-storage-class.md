@@ -7,7 +7,7 @@ SC是**StorageClass**的缩写。K8S用SC来定义**持久卷PV**的模板。通
 Pxtool工具集里提供了常用的SC的yaml文件。
 
 {% hint style="info" %}
-如需定制更详细的StorageClass,请参阅本章附录
+如需定制更详细的StorageClass,请参考本章附录
 {% endhint %}
 
 ## 步骤 <a id="steps"></a>
@@ -52,10 +52,10 @@ provisioner: kubernetes.io/portworx-volume
 | priority\_io | 存储池 | low | high, medium, low |
 | journal | 日志缓存 | false | true, false |
 | io\_profile | IO类型 | sequential | db, sequential, cms |
-| sticky | 方删除 | false | true, false |
+| sticky | 防删除 | false | true, false |
 
 {% hint style="info" %}
-更多参数请见[官方文档](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning)
+更多参数请参考[官方文档](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning)
 {% endhint %}
 
 
