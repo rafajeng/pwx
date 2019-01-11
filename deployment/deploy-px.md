@@ -64,7 +64,7 @@ PX的所有运行参数请参见本章”附录“
 {% endhint %}
 
 {% hint style="warning" %}
-Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不一致的节点，请参考章节“[添加节点](../change/add-nodes.md)“
+Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不一致的节点，请参考章节“[添加节点](../change/add-node.md)“
 {% endhint %}
 
 ### 2. 创建yaml文件 <a id="step-2-yamls"></a>
