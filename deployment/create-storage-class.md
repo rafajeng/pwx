@@ -1,10 +1,10 @@
-# 创建StorageClass
+# 创建SC
 
- 概述
+## 概述
 
-Kubernetes里, StorageClass定义了PV\(持久卷\)的模板。通过StorageClass, 用户可以在创建PVC\(持久卷申请\)的时候同时创建出相应的PV。
+SC是**StorageClass**的缩写。K8S用SC来定义**持久卷PV**的模板。通过SC, 用户可以在创建**持久卷申请PVC**的时候同时创建出相应的PV。
 
-Pxtool工具集里提供了常用的StorageClass的yaml文件。
+Pxtool工具集里提供了常用的SC的yaml文件。
 
 {% hint style="info" %}
 如需定制更详细的StorageClass,请参阅本章附录
@@ -19,7 +19,7 @@ $ pxtools/cli/px-yaml.sh sc -v basic
 Created file as ./px-yamls/sc/sc-basic.yaml
 ```
 
-### 2. 创建常用StorageClass
+### 2. 创建常用SC
 
 ```text
 $ kubectl apply -f px-yamls/sc/sc-basic.yaml
@@ -29,7 +29,7 @@ $ kubectl get storageclass -o wide
 
 ## 附录
 
-### StorageClass yaml格式
+### SC yaml格式
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -43,7 +43,7 @@ parameters:
 provisioner: kubernetes.io/portworx-volume
 ```
 
-### PX StorageClass 常见参数
+### PX SC 常见参数
 
 | 参数 | 描述 | 默认值 | 可选值 |
 | :--- | :--- | :--- | :--- |

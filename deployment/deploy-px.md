@@ -4,7 +4,7 @@
 
 ### 1. Daemonset <a id="daemonset"></a>
 
-PX在Kubernetes环境中是用**daemonset**模式部署，整个部署过程完全容器化和自动化。所以要求用户在部署前对Kubernetes有基础的知识积累。
+PX在K8S环境中是用**daemonset**模式部署，整个部署过程完全容器化和自动化。所以要求用户在部署前对K8S有基础的知识积累。
 
 PX的daemonset里是oci-monitor容器。它是一个辅助功能的容器，只负责部署，启停和监控, 不负责实际的存储功能。oci-monitor容器会自动拉取和解压px-enteprise镜像，部署由systemd控制的px-runc容器。整体控制流如下：
 
