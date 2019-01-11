@@ -1,8 +1,8 @@
 # 环境准备
 
-## 硬件
+## 硬件 <a id="hardware"></a>
 
-## 操作系统
+## 操作系统 <a id="os"></a>
 
 此手册只适用于RHEL和CentOS，版本**7.2**以上。
 
@@ -10,7 +10,7 @@
 PX官方支持各种主流Linux发行版。如需支持，请联系道云。
 {% endhint %}
 
-## 依赖包
+## 依赖包 <a id="dependency"></a>
 
 {% code-tabs %}
 {% code-tabs-item title="必须安装" %}
@@ -36,7 +36,7 @@ pciutils smartmontools psmisc
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## pxtools工具集
+## Pxtools工具集 <a id="pxtools"></a>
 
 {% hint style="info" %}
 道云提供pxtools以简化PX的部署和维护。道云的PX部署步骤都需要用到pxtools里的工具。
