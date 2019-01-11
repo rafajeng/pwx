@@ -21,7 +21,7 @@ Daemonset使用yaml文件定义，建议使用pxtools工具集里的**px-yaml.sh
 PX对K8S CSI的支持目前处在“技术预览\(technical preview\)"状态，所以此章节的部署模式**不支持CSI**。
 
 {% hint style="info" %}
-如果需要预览PX对K8S CSI的支持，请参阅”[K8S CSI](other-scenarios/k8s-csi.md)“章节
+如果需要预览PX对K8S CSI的支持，请参阅章节”[K8S CSI](other-scenarios/k8s-csi.md)“
 {% endhint %}
 
 ## 步骤 <a id="steps"></a>
@@ -61,6 +61,10 @@ px-opts常用参数：
 
 {% hint style="info" %}
 PX的所有运行参数请参见本章”附录“
+{% endhint %}
+
+{% hint style="warning" %}
+Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不一致的节点，请参阅章节“[添加节点](../kuo-rong/add-nodes.md)“
 {% endhint %}
 
 ### 2. 创建yaml文件 <a id="step-2-yamls"></a>
