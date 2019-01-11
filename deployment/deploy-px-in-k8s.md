@@ -1,11 +1,13 @@
-# 部署PX \(K8S\)
+# 部署PX
 
 ## 概述 <a id="overview"></a>
 
-PX在Kubernetes环境中是由**yaml**文件定义的**daemonset**，整个部署过程完全容器化和自动化。所以要求用户在部署前，对Kubernetes有基础的知识积累。
+PX在Kubernetes环境中是由**yaml**文件定义的**daemonset**，整个部署过程完全容器化和自动化。所以要求用户在部署前对Kubernetes有基础的知识积累。
+
+PX对K8S CSI的支持目前处在“技术预览\(technical preview\)"状态，所以此章节描述的是非CSI部署模式。
 
 {% hint style="info" %}
-Kubernetes CSI \(Container Storage Interface\) 
+如果需要预览PX对K8S CSI的支持，请参阅 [K8S CSI](other-scenarios/k8s-csi.md) 章节
 {% endhint %}
 
 ## 步骤 <a id="steps"></a>
