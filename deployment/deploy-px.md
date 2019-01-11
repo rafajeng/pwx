@@ -9,7 +9,7 @@ PX在Kubernetes环境中是用**daemonset**模式部署，整个部署过程完�
 PX的daemonset里是oci-monitor容器。它是一个辅助功能的容器，只负责部署，启停和监控, 不负责实际的存储功能。oci-monitor容器会自动拉取和解压px-enteprise镜像，部署由systemd控制的px-runc容器。整体控制流如下：
 
 ```text
-kubelet => docker => oci-monitor => systemd => runc => px-enterprise 
+kubelet => docker => oci-monitor => systemd => runc => px-enterprise
 ```
 
 PX的daemonset部署在kube-system的租户下，有**Node Affinity** \(节点亲和性\), 只会扩展到有**px/enabled=true**的节点上。
@@ -63,14 +63,14 @@ px-opts常用参数：
 PX的所有运行参数请参见本章”附录“
 {% endhint %}
 
-### 2. 生成yaml文件 <a id="step-2-yamls"></a>
+### 2. 创建yaml文件 <a id="step-2-yamls"></a>
 
 ```text
-$ pxtools/cli/px-yaml.sh create -f ./px-opts.txt -r daocloud.io 
-Yaml files are generated under ./px-yamls
+$ pxtools/cli/px-yaml.sh oci --file ./px-opts.txt --registry daocloud.io 
+Created file as: ./px-yamls/oci/oci-monitor.yaml
 ```
 
-px-yaml.sh常用参数:
+px-yaml.sh oci 常用参数:
 
 | 参数 | 默认值 | 解释 |
 | :--- | :--- | :--- |
