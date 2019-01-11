@@ -48,7 +48,6 @@ $ watch "pxctl service drive replace --source /dev/sdc --operation status --verb
 
 ```text
 $ pxctl service drive replace --source /dev/sdc --operation status
-Drive add: Storage rebalance complete
 
 $ pxctl service drive show
 ```
