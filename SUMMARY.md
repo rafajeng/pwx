@@ -5,7 +5,7 @@
 * [部署](deployment/README.md)
   * [环境准备](deployment/environment-preparation.md)
   * [部署Etcd](deployment/deploy-etcd.md)
-  * [部署PX](deployment/deploy-px-in-k8s.md)
+  * [部署PX](deployment/deploy-px.md)
   * [创建StorageClass](deployment/create-storage-class.md)
   * [其它场景](deployment/other-scenarios/README.md)
     * [K8S CSI](deployment/other-scenarios/k8s-csi.md)
