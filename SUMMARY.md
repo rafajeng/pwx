@@ -11,6 +11,7 @@
     * [K8S CSI](deployment/other-scenarios/k8s-csi.md)
     * [独立存储节点](deployment/other-scenarios/standalone-storage-node.md)
     * [Swarm和Mesos](deployment/other-scenarios/swarm-and-mesos.md)
+    * [OpenSSL](deployment/other-scenarios/openssl.md)
 * [操作](operations.md)
 * [监控](monitoring.md)
 * [维护](maintenance.md)
