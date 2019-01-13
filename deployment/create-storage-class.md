@@ -15,8 +15,8 @@ Pxtool工具集里提供了常用的SC的yaml文件。
 ### 1. 创建yaml文件
 
 ```text
-$ pxtools/cli/px-yaml.sh sc -v basic
-Created file as ./px-yamls/sc/sc-basic.yaml
+$ pxtools/cli/px-yaml.sh sc
+Created file at ./px-yamls/sc/
 ```
 
 ### 2. 创建常用SC
@@ -25,6 +25,16 @@ Created file as ./px-yamls/sc/sc-basic.yaml
 $ kubectl apply -f px-yamls/sc/sc-basic.yaml
 
 $ kubectl get storageclass -o wide 
+```
+
+{% hint style="info" %}
+Pxtools根据 ”HDD/SSD“, ”独占/共享“，”1/2/3副本“ 这三个配置，提供了12种常见的SC。用户可以根据自己的需要做删减。
+{% endhint %}
+
+### \*3. 删除SC
+
+```text
+$ kubectl delete sc <SC NAME>
 ```
 
 ## 附录

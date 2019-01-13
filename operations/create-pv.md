@@ -2,16 +2,21 @@
 
 ## 概述 <a id="overview"></a>
 
-本章节描述K8S动态创建PV的方法，也就是**Dynamic Provisioning**. 使用这种方法，PV是在创建PVC的时候根据SC创建出来。
+本章节描述K8S动态分配PV的方法，也就是**Dynamic Provisioning**. 使用这种方法，PV是在创建PVC的时候根据SC创建出来。
 
 ## 步骤 <a id="steps"></a>
 
 ### 1. 编写PVC的yaml文件
 
-这里试用Pxtools里的示例:
+这里使用pxtools里的示例
+
+```text
+pxtools/cli/px-yaml.sh test
+Created file at ./px-yamls/test
+```
 
 {% code-tabs %}
-{% code-tabs-item title="pxtools/example/pvc-example.yaml" %}
+{% code-tabs-item title="px-yamls/pvc/pvc-test.yaml" %}
 ```yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -48,7 +53,7 @@ spec:
 ### 2. 执行yaml文件
 
 ```text
-kubectl apply -f pvc-example.yaml
+kubectl apply -f ./px-yamls/pvc/pvc-test.yaml
 ```
 
 ### 3. 查看PVC状态
