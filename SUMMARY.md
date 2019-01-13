@@ -26,6 +26,7 @@
 * [监控](monitoring.md)
 * [维护](maintenance.md)
 * [性能](performance.md)
+* [公有云](public-cloud.md)
 * [CLI](cli.md)
 * [工具](tools/README.md)
   * [px-node.sh](tools/px-node.sh.md)
@@ -40,5 +41,4 @@
 * [方案](solutions.md)
 * [API](api.md)
 * [FAQ](faq.md)
-* [知识库](kb.md)
 
