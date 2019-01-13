@@ -25,6 +25,7 @@
   * [删除PV](operations/delete-pv.md)
   * [增减副本](operations/change-replica-number.md)
 * [监控](monitoring/README.md)
+  * [日志](monitoring/ri-zhi.md)
   * [PX-Central](monitoring/px-central.md)
 * [维护](maintenance.md)
 * [性能](performance.md)

@@ -2,7 +2,12 @@
 
 ## 概述 <a id="overview"></a>
 
-PX-Central包括**Lighthouse**和**Prometheus**两个组件
+PX-Central包括以下组件
+
+1. Lighthouse
+2. Prometheus
+3. Grafana
+4. AlertManager
 
 ## 步骤 <a id="steps"></a>
 
@@ -15,5 +20,33 @@ Created file
 
 ### 2. 部署Lighthouse
 
+```text
+kubctl apply -f px-yamls/mon/lighthouse.yaml
+```
 
+### 3. 部署Prometheus
+
+```text
+kubctl apply -f px-yamls/mon/prometheus.yaml
+```
+
+### 4. 部署Grafana
+
+```text
+kubctl apply -f px-yamls/mon/grafana.yaml
+```
+
+### 5. 部署AlertManager
+
+```text
+kubctl apply -f px-yamls/mon/alertmanager.yaml
+```
+
+### 6. 检查部署
+
+```text
+kubectl -n kube-system get deployments -o wide
+
+kubectl -n kube-system get pods -o wide
+```
 
