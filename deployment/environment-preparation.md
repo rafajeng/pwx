@@ -59,6 +59,20 @@ PX目前只能用SSD/NVME做日志缓冲盘，提升处理小IO的性能。全�
 PX官方支持各种主流Linux发行版。如需支持，请联系道云。
 {% endhint %}
 
+## 防火墙
+
+确保节点间以下端口为打开，**TCP和UDP协议都要启用**
+
+| 端口 | 功能 |
+| :--- | :--- |
+| 9000 | API |
+| 9001 | API |
+| 9017 | Trace日志 |
+| 9018 | 内置Etcd Peer |
+| 9019 | 内置Etcd Client |
+| 19018 | 外置Etcd Peer |
+| 19019 | 外置Etcd Client |
+
 ## 依赖包 <a id="dependency"></a>
 
 {% code-tabs %}
