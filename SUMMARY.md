@@ -20,6 +20,7 @@
   * [删除数据盘](change/remove-device.md)
 * [使用](operations/README.md)
   * [创建PV](operations/create-pv.md)
+  * [挂载PV](operations/mount-pv.md)
   * [扩大PV](operations/resize-pv.md)
   * [删除PV](operations/delete-pv.md)
   * [增减副本](operations/change-replica-number.md)

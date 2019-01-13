@@ -31,8 +31,11 @@ $ kubectl get storageclass -o wide
 
 ### SC yaml格式
 
+{% code-tabs %}
+{% code-tabs-item title="pxtools/k8s/sc/sc-basic.yaml" %}
 ```yaml
 apiVersion: storage.k8s.io/v1
+
 kind: StorageClass
 metadata:
   name: px-hdd-ha3-rwo
@@ -41,7 +44,19 @@ parameters:
   repl: "3"
   shared: "false"
 provisioner: kubernetes.io/portworx-volume
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: px-ssd-ha2-rwo
+parameters:
+  priority_io: "high"
+  repl: "2"
+  shared: "true"
+provisioner: kubernetes.io/portworx-volume
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### PX SC 常见参数
 
