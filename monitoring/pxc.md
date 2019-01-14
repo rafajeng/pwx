@@ -1,8 +1,8 @@
-# PX-Central
+# PXC
 
 ## 概述 <a id="overview"></a>
 
-PX-Central包括以下组件
+PXC指的是PX-Central监控套件。它包括以下组件。
 
 1. Lighthouse
 2. Prometheus
