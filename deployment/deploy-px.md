@@ -39,7 +39,7 @@ px-opts文件包含PX的运行参数，以下为示例描述了一个有"双网�
 -d ens224
 -s /dev/sdb
 -s /dev/sdc
--j /dev/sdb
+-j auto
 -secret_type kvdb
 -x kubernetes
 ```
@@ -56,7 +56,7 @@ px-opts常用参数：
 | -d &lt;ethX&gt; | 数据网卡设备名 |
 | -m &lt;ethX&gt; | 管理网卡设备名 |
 | -x kubernetes | 编排软件为Kubernetes |
-| -j &lt;device path&gt; | 日志缓冲盘路径，如果是整块裸盘，PX自动做分区 |
+| -j auto | 日志缓冲盘分区 |
 | -secrect\_type kvdb | 秘钥存储为Etcd，用于保存连接第三方服务的登陆信息 |
 
 {% hint style="info" %}

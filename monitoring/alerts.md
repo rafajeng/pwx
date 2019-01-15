@@ -76,10 +76,12 @@ VOLUME  VolumeSpaceLowCleared           SEVERITY_TYPE_NOTIFY
 VOLUME  CloudMigrationUpdate            SEVERITY_TYPE_NOTIFY
 VOLUME  CloudMigrationSuccess           SEVERITY_TYPE_NOTIFY
 VOLUME  PXMaxAlertNum                   SEVERITY_TYPE_NOTIFY
+
 DRIVE   DriveOperationFailure           SEVERITY_TYPE_ALARM
 DRIVE   DriveStateChange                SEVERITY_TYPE_WARNING
 DRIVE   DriveStateChangeClear           SEVERITY_TYPE_WARNING
 DRIVE   DriveOperationSuccess           SEVERITY_TYPE_NOTIFY
+
 NODE    PXInitFailure                   SEVERITY_TYPE_ALARM
 NODE    ClusterManagerFailure           SEVERITY_TYPE_ALARM
 NODE    KernelDriverFailure             SEVERITY_TYPE_ALARM
@@ -93,6 +95,7 @@ NODE    NodeScanCompletion              SEVERITY_TYPE_NOTIFY
 NODE    PXReady                         SEVERITY_TYPE_NOTIFY
 NODE    ObjectstoreSuccess              SEVERITY_TYPE_NOTIFY
 NODE    ObjectstoreStateChange          SEVERITY_TYPE_NOTIFY
+
 CLUSTER VolGroupOperationFailure        SEVERITY_TYPE_ALARM
 CLUSTER NodeStartFailure                SEVERITY_TYPE_ALARM
 CLUSTER NodeStateChange                 SEVERITY_TYPE_ALARM
