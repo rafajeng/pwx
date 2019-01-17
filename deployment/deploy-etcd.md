@@ -1,5 +1,5 @@
 ---
-description: Deploy Etcd
+description: Deploy etcd
 ---
 
 # 部署Etcd
