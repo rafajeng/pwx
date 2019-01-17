@@ -2,7 +2,7 @@
 
 ### 此章节描述在K8S环境里快速部署PX的方法，有以下四步：
 
-1. [环境准备](environment-preparation.md)
+1. [环境准备](prepare-environment.md)
 2. [部署Etcd](deploy-etcd.md)
 3. [部署PX](deploy-px.md)
 4. [创建SC](create-storage-class.md)

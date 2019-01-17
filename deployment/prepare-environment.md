@@ -1,3 +1,7 @@
+---
+description: Prepare Environment
+---
+
 # 环境准备
 
 ## 硬件配置

@@ -1,3 +1,7 @@
+---
+description: Create SC
+---
+
 # 创建SC
 
 ## 概述

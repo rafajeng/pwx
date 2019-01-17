@@ -41,15 +41,9 @@ Daemonset会给每个节点配置同样的PX参数，所以默认每个节点的
 
 #### 2. 网卡名不一致
 
-在给新节点打上px/enable=true标签之前，使用**px-node.sh脚本**更改PX的配置。其原理在oci-monitor创建/opt/pwx/oci/config.json的一刻立即将其更改，它会在完成更改之后自动退出。
+在给新节点打上px/enable=true标签之前，使用**px-node.sh脚本**把节点添加到集群里，然后再给新节点打px/enabled=true标签。 
 
-```text
-$ pxtools/cli/px-node.sh reconf -file ./px-opts --watch
-```
-
-{% hint style="info" %}
-新节点加入PX集群之后，其网卡配置存入Etcd, 不再受本地配置文件影响
-{% endhint %}
+\*\*\*\*
 
 
 

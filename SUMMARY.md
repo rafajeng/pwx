@@ -3,7 +3,7 @@
 * [道云PX手册](README.md)
 * [概览](overview.md)
 * [部署](deployment/README.md)
-  * [环境准备](deployment/environment-preparation.md)
+  * [环境准备](deployment/prepare-environment.md)
   * [部署Etcd](deployment/deploy-etcd.md)
   * [部署PX](deployment/deploy-px.md)
   * [创建SC](deployment/create-storage-class.md)
