@@ -50,3 +50,9 @@ kubectl -n kube-system get deployments -o wide
 kubectl -n kube-system get pods -o wide
 ```
 
+### 7. 访问Grafana
+
+`http://<master_ip>:30950`
+
+![](../.gitbook/assets/image%20%282%29.png)
+
