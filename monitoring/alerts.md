@@ -19,6 +19,9 @@ pxctl service alerts show
 ```text
 /opt/pwx/bin/runc exec -e ETCDCTL_API=3 \
 portworx-etcd etcdctl get --prefix "pwx/<Cluster ID>/alerts"
+
+/opt/pwx/bin/runc exec -e ETCDCTL_API=2 \
+portworx-etcd etcdctl ls "pwx/<Cluster ID>/alerts"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -32,13 +35,9 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-{% hint style="info" %}
-远程抓取告警，请使用REST API, 不建议使用pxctl和etcdctl。
-{% endhint %}
-
 ### 告警分类
 
-| **Alert Codes** | **Alert Type** | **Severity** | **Resource Type** | **Description** |
+| **编码** | **Alert Type** | **Severity** | **Resource Type** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
 | 0 | DriveOperationFailure | ALARM | DRIVE | Triggered when a driver operations such as add or replace fails. |
 | 1 | DriveOperationSuccess | NOTIFY | DRIVE | Triggered when a driver operations such as add or replace fails. |
