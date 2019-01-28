@@ -112,6 +112,7 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 
 {% code-tabs-item title="数据盘不可用" %}
 ```python
+{
     "alert_type": 54,
     "id": 41,
     "message": "Failed to mount storage on 10.133.100.57: Failed to mount device UUID a2d8e016-a6ef-4b50-af41-4672a11e58fc, dev path /dev/sdb2 at /var/.px/0: error invalid argument",
