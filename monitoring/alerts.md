@@ -147,7 +147,7 @@ AlertID	Resource	ResourceID					Timestamp			Severity	AlertType			Description
 | 集群 | cluster | 3 |
 | 节点 | node | 2 |
 | 卷 | volume | 1 |
-| 数据盘 | drive | 0 |
+| 数据盘 | drive | 4 |
 
 ## 等级 <a id="severity"></a>
 
