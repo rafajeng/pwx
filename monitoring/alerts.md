@@ -41,7 +41,7 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 {
     "alert_type": 11,
     "id": 10067,
-    "message": "Node 10.133.100.61 has an Operational Status: Down",
+    "message": "Node 10.133.100.55 has an Operational Status: Down",
     "resource": 3,
     "resource_id": "f7a25c5e-a151-4397-a64b-f735f04557e7",
     "severity": 1,
