@@ -37,7 +37,7 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 
 ### 告警分类
 
-| **编码** | **Alert Type** | **Severity** | **Resource Type** | **Description** |
+| 编码 | 类型 | 等级 | 对象 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
 | 0 | DriveOperationFailure | ALARM | DRIVE | Triggered when a driver operations such as add or replace fails. |
 | 1 | DriveOperationSuccess | NOTIFY | DRIVE | Triggered when a driver operations such as add or replace fails. |
