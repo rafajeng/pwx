@@ -36,7 +36,7 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 ## 示例
 
 {% code-tabs %}
-{% code-tabs-item title="Etcd" %}
+{% code-tabs-item title="节点失去心跳" %}
 ```python
 {
     "alert_type": 36,
@@ -51,7 +51,11 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
     },
     "ttl": 86400
 }
+```
+{% endcode-tabs-item %}
 
+{% code-tabs-item title="节点宕机" %}
+```python
 {
     "alert_type": 11,
     "id": 38,
@@ -65,7 +69,11 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
     },
     "ttl": 172800
 }
+```
+{% endcode-tabs-item %}
 
+{% code-tabs-item title="节点恢复" %}
+```python
 {
     "alert_type": 53,
     "id": 39,
@@ -81,14 +89,31 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 }
 ```
 {% endcode-tabs-item %}
+
+{% code-tabs-item title="数据盘不可用" %}
+```python
+    "alert_type": 54,
+    "id": 41,
+    "message": "Failed to mount storage on 10.133.100.57: Failed to mount device UUID a2d8e016-a6ef-4b50-af41-4672a11e58fc, dev path /dev/sdb2 at /var/.px/0: error invalid argument",
+    "resource": 2,
+    "resource_id": "c2045f14-4f21-4265-8c0a-89de427c611d",
+    "severity": 1,
+    "timestamp": {
+        "nanos": 85033010,
+        "seconds": 1548661144
+    },
+    "ttl": 172800
+}
+```
+{% endcode-tabs-item %}
 {% endcode-tabs %}
 
 ## 对象 <a id="resource-type"></a>
 
-| 对象 | 子路径 | Resource |
+| 对象 | 键值子路径 | Resource |
 | :--- | :--- | :--- |
-| 集群 | Cluster | 3 |
-| 节点 | Node | 2 |
+| 集群 | cluster | 3 |
+| 节点 | node | 2 |
 | 卷 | volume | 1 |
 | 数据盘 | drive | 0 |
 
