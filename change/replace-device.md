@@ -36,6 +36,9 @@ Status: PX is in maintenance mode
 $ pxctl service drive replace \
 --source /dev/sdc --target /dev/sdd \
 --operation start --verbose
+
+Replace operation is in progress
+
 ```
 
 ### 3. 查看进度
@@ -44,6 +47,8 @@ $ pxctl service drive replace \
 $ pxctl service drive replace \
 --source /dev/sdc --target /dev/sdd \
 --operation status --verbose
+
+0.2% done, 0 write errs, 0 uncorr. read errs 
 ```
 
 ### 4. 确认数据盘更换成功
@@ -52,6 +57,8 @@ $ pxctl service drive replace \
 $ pxctl service drive replace \
 --source /dev/sdc --target /dev/sdd \
 --operation status --verbose
+
+Started on 28.Jan 08:29:15, finished on 28.Jan 08:30:58, 0 write errs, 0 uncorr. read errs
 
 $ pxctl service drive show
 ```
