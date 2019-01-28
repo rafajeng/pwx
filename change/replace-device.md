@@ -41,13 +41,17 @@ $ pxctl service drive replace \
 ### 3. 查看进度
 
 ```text
-$ watch "pxctl service drive replace --source /dev/sdc --operation status --verbose"
+$ pxctl service drive replace \
+--source /dev/sdc --target /dev/sdd \
+--operation status --verbose
 ```
 
 ### 4. 确认数据盘更换成功
 
 ```text
-$ pxctl service drive replace --source /dev/sdc --operation status
+$ pxctl service drive replace \
+--source /dev/sdc --target /dev/sdd \
+--operation status --verbose
 
 $ pxctl service drive show
 ```
