@@ -89,16 +89,16 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 | :--- | :--- | :--- |
 | 集群 | Cluster | 3 |
 | 节点 | Node | 2 |
-| 数据盘 | Drive | 1 |
-| 卷 | volume | 0 |
+| 卷 | volume | 1 |
+| 数据盘 | drive | 0 |
 
 ## 等级 <a id="severity"></a>
 
 | 等级 | 代号 | Severity |
 | :--- | :--- | :--- |
 | 告知 | Notify | 3 |
-| 注意 | Warn | 1 |
-| 紧急 | Alarm | 2 |
+| 注意 | Warn | 2 |
+| 紧急 | Alarm | 1 |
 
 ## 编码 <a id="coding"></a>
 
