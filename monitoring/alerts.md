@@ -15,10 +15,10 @@ pxctl service alerts show
 {% code-tabs %}
 {% code-tabs-item title="Etcdctl" %}
 ```text
-/opt/pwx/bin/runc exec -e ETCDCTL_API=3 \
+/opt/pwx-etcd/bin/runc exec -e ETCDCTL_API=3 \
 portworx-etcd etcdctl get --prefix "pwx/<Cluster ID>/alerts"
 
-/opt/pwx/bin/runc exec -e ETCDCTL_API=2 \
+/opt/pwx-etcd/bin/runc exec -e ETCDCTL_API=2 \
 portworx-etcd etcdctl ls "pwx/<Cluster ID>/alerts"
 ```
 {% endcode-tabs-item %}
@@ -39,17 +39,45 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 {% code-tabs-item title="Etcd" %}
 ```python
 {
-    "alert_type": 11,
-    "id": 10067,
-    "message": "Node 10.133.100.55 has an Operational Status: Down",
+    "alert_type": 36,
+    "id": 37,
+    "message": "Node c2045f14-4f21-4265-8c0a-89de427c611d (10.133.100.57) marked down by 3aff8b4f-39f6-4326-a3c6-3883a8a27931 (10.133.100.55): node did not respond to gossip heartbeats",
     "resource": 3,
-    "resource_id": "f7a25c5e-a151-4397-a64b-f735f04557e7",
+    "resource_id": "c2045f14-4f21-4265-8c0a-89de427c611d",
+    "severity": 2,
+    "timestamp": {
+        "nanos": 647290688,
+        "seconds": 1548659451
+    },
+    "ttl": 86400
+}
+
+{
+    "alert_type": 11,
+    "id": 38,
+    "message": "Node 10.133.100.57 has an Operational Status: Down",
+    "resource": 3,
+    "resource_id": "c2045f14-4f21-4265-8c0a-89de427c611d",
     "severity": 1,
     "timestamp": {
-        "nanos": 62497922,
-        "seconds": 1546050838
+        "nanos": 659181061,
+        "seconds": 1548659451
     },
     "ttl": 172800
+}
+
+{
+    "alert_type": 53,
+    "id": 39,
+    "message": "PX is ready on Node: 10.133.100.57 (c2045f14-4f21-4265-8c0a-89de427c611d). CLI accessible at /opt/pwx/bin/pxctl.",
+    "resource": 2,
+    "resource_id": "PX-test-88dec00b-734c-4e78-a76d-24e7cf65cd47",
+    "severity": 3,
+    "timestamp": {
+        "nanos": 843409961,
+        "seconds": 1548659571
+    },
+    "ttl": 43200
 }
 ```
 {% endcode-tabs-item %}
@@ -57,16 +85,20 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 
 ## 对象 <a id="resource-type"></a>
 
-* 集群：Cluster
-* 节点：Nodes
-* 硬盘：Disks
-*     卷：Volumes
+| 对象 | 子路径 | Resource |
+| :--- | :--- | :--- |
+| 集群 | Cluster | 3 |
+| 节点 | Node | 2 |
+| 数据盘 | Drive | 1 |
+| 卷 | volume | 0 |
 
 ## 等级 <a id="severity"></a>
 
-* 告知：NOTIFY （Severity 0\)
-* 注意：WARN      \(Severity 1\)
-* 警报：ALARM    \(Severity 2\)
+| 等级 | 代号 | Severity |
+| :--- | :--- | :--- |
+| 告知 | Notify | 3 |
+| 注意 | Warn | 1 |
+| 紧急 | Alarm | 2 |
 
 ## 编码 <a id="coding"></a>
 
