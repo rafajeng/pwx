@@ -31,8 +31,8 @@ curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
 {% code-tabs %}
 {% code-tabs-item title="REAT API" %}
 ```text
-curl -X GET "http://127.0.0.1:9001/v1/cluster/alerts/0" \
--H "accept: application/json"
+curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
+-H "accept: application/json" | python -m json.tool
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
