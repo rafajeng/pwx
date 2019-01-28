@@ -23,7 +23,7 @@ portworx-etcd etcdctl get --prefix "pwx/<Cluster ID>/alerts"
 {% code-tabs-item title="Etcd 2.0" %}
 ```
 curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
-| python -m json.tool | grep \"value\" 
+| python -m json.tool | grep \"value\" | sed 's#\\"#"#g'
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -31,15 +31,19 @@ curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
 {% code-tabs %}
 {% code-tabs-item title="REAT API" %}
 ```text
-curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
+curl -X GET "http://127.0.0.1:9001/v1/cluster/alerts/0" \
 -H "accept: application/json"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+{% hint style="info" %}
+如果需要远程抓取告警，建议使用REST API。
+{% endhint %}
+
 ## 示例
 
-### Etcd
+### Etcd 和 REST API
 
 {% code-tabs %}
 {% code-tabs-item title="节点失去心跳" %}
