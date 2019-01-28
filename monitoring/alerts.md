@@ -35,6 +35,8 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 
 ## 示例
 
+### Etcd
+
 {% code-tabs %}
 {% code-tabs-item title="节点失去心跳" %}
 ```python
@@ -90,6 +92,24 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 ```
 {% endcode-tabs-item %}
 
+{% code-tabs-item title="卷创建失败" %}
+```python
+{
+    "alert_type": 38,
+    "id": 40,
+    "message": "Volume (Name: pv-4e1d4b10-e05f-40fb-acf0-c4083c78c431) create failed: License has expired",
+    "resource": 1,
+    "resource_id": "pv-4e1d4b10-e05f-40fb-acf0-c4083c78c431",
+    "severity": 1,
+    "timestamp": {
+        "nanos": 943171174,
+        "seconds": 1548660743
+    },
+    "ttl": 172800
+}
+```
+{% endcode-tabs-item %}
+
 {% code-tabs-item title="数据盘不可用" %}
 ```python
     "alert_type": 54,
@@ -107,6 +127,18 @@ curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+### Pxctl
+
+```text
+AlertID	Resource	ResourceID					Timestamp			Severity	AlertType			Description														
+36	CLUSTER		3aff8b4f-39f6-4326-a3c6-3883a8a27931		Jan 28 05:08:44 UTC 2019	WARN		License expiring		Trial license expired 17 days, 5:08 ago											
+37	CLUSTER		c2045f14-4f21-4265-8c0a-89de427c611d		Jan 28 07:10:51 UTC 2019	WARN		Node marked down		Node c2045f14-4f21-4265-8c0a-89de427c611d (10.133.100.57) marked down by 3aff8b4f-39f6-4326-a3c6-3883a8a27931 (10.133.100.55): node did not respond to gossip heartbeats	
+38	CLUSTER		c2045f14-4f21-4265-8c0a-89de427c611d		Jan 28 07:10:51 UTC 2019	ALARM		Node state change		Node 10.133.100.57 has an Operational Status: Down									
+39	NODE		PX-test-88dec00b-734c-4e78-a76d-24e7cf65cd47	Jan 28 07:12:51 UTC 2019	NOTIFY		PX ready			PX is ready on Node: 10.133.100.57 (c2045f14-4f21-4265-8c0a-89de427c611d). CLI accessible at /opt/pwx/bin/pxctl.	
+40	VOLUME		pv-4e1d4b10-e05f-40fb-acf0-c4083c78c431			Jan 28 07:32:23 UTC 2019	ALARM		Volume create failure		Volume (Name: alex) create failed: License has expired									
+41	NODE		c2045f14-4f21-4265-8c0a-89de427c611d		Jan 28 07:39:04 UTC 2019	ALARM		Storage could not be mounted	Failed to mount storage on 10.133.100.57: Failed to mount device UUID a2d8e016-a6ef-4b50-af41-4672a11e58fc, dev path /dev/sdb2 at /var/.px/0: error invalid argument		
+```
 
 ## 对象 <a id="resource-type"></a>
 
