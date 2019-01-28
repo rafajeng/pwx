@@ -37,8 +37,8 @@ curl -sX GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-{% hint style="info" %}
-如果需要远程抓取告警，建议使用REST API。
+{% hint style="warning" %}
+如果需要远程抓取告警，建议使用REST API, 不建议使用Etcd
 {% endhint %}
 
 ## 示例
