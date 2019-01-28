@@ -1,6 +1,6 @@
 # 告警
 
-## 显示 <a id="display"></a>
+##  显示 <a id="display"></a>
 
 有以下三种方法获取告警：
 
@@ -13,13 +13,17 @@ pxctl service alerts show
 {% endcode-tabs %}
 
 {% code-tabs %}
-{% code-tabs-item title="Etcdctl" %}
+{% code-tabs-item title="Etcd 3.0" %}
 ```text
 /opt/pwx-etcd/bin/runc exec -e ETCDCTL_API=3 \
 portworx-etcd etcdctl get --prefix "pwx/<Cluster ID>/alerts"
+```
+{% endcode-tabs-item %}
 
-/opt/pwx-etcd/bin/runc exec -e ETCDCTL_API=2 \
-portworx-etcd etcdctl ls "pwx/<Cluster ID>/alerts"
+{% code-tabs-item title="Etcd 2.0" %}
+```
+curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
+| python -m json.tool | grep \"value\" 
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
