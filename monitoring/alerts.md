@@ -22,7 +22,7 @@ portworx-etcd etcdctl get --prefix "pwx/<Cluster ID>/alerts"
 
 {% code-tabs-item title="Etcd 2.0" %}
 ```
-curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
+curl -sL http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
 | python -m json.tool | grep \"value\" | sed 's#\\"#"#g'
 ```
 {% endcode-tabs-item %}
@@ -31,7 +31,7 @@ curl -L http://127.0.0.1:2379/v2/keys/pwx/<Cluster ID>/alert/?recursive=true \
 {% code-tabs %}
 {% code-tabs-item title="REAT API" %}
 ```text
-curl -X GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
+curl -sX GET "http://<PX Node IP>:9001/v1/cluster/alerts/0" \
 -H "accept: application/json" | python -m json.tool
 ```
 {% endcode-tabs-item %}
