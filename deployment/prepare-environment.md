@@ -17,6 +17,14 @@ description: Prepare Environment
 实际操作中, CPU和内存的配置优先服从PaaS平台的规划。
 {% endhint %}
 
+## 节点数量 <a id="best-practice"></a>
+
+生产系统至少要**三个节点**的PX。
+
+{% hint style="warning" %}
+只有安装了PX的节点才可以挂PX卷
+{% endhint %}
+
 ## 最佳实践 <a id="best-practice"></a>
 
 ### 网卡配置 <a id="network-configuration"></a>
@@ -76,6 +84,12 @@ PX官方支持各种主流Linux发行版。如需支持，请联系道云。
 | 9019 | 内置Etcd Client |
 | 19018 | 外置Etcd Peer |
 | 19019 | 外置Etcd Client |
+
+## DNS
+
+{% hint style="danger" %}
+所有安装PX的主机名必须可以解析。建议添加解析表到/etc/hosts做静态解析
+{% endhint %}
 
 ## 依赖包 <a id="dependency"></a>
 

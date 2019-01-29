@@ -1,6 +1,6 @@
 # Table of contents
 
-* [道云PX手册](README.md)
+* [PX简明手册](README.md)
 * [概览](overview.md)
 * [部署](deployment/README.md)
   * [环境准备](deployment/prepare-environment.md)
