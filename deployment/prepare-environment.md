@@ -87,7 +87,7 @@ PX官方支持各种主流Linux发行版。如需支持，请联系道云。
 
 ## DNS
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 所有安装PX的主机名必须可以解析。建议添加解析表到/etc/hosts做静态解析
 {% endhint %}
 
