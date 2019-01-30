@@ -4,14 +4,12 @@
 
 PXC指的是PX-Central监控套件。它包括以下组件:
 
-| 组件 |  |
+| 组件 | 功能 |
 | :--- | :--- |
-| Lighthouse |  |
-
-1. Lighthouse
-2. Prometheus
-3. Grafana
-4. AlertManager
+| Lighthouse | PX的图形界面 |
+| Prometheus | 监控核心 |
+| Grafana | 监控图形界面 |
+| AlertManager | 警报管理 |
 
 ## 步骤 <a id="steps"></a>
 
@@ -73,7 +71,9 @@ $ kubectl apply -f px-yamls/mon/alertmanager-cluster.yaml
 
 ### 9.访问grafana
 
-`http://<master_ip>:30950`
+`http://<ip>:30950`
 
 ![](../.gitbook/assets/image%20%282%29.png)
+
+
 
