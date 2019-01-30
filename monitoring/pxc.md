@@ -2,7 +2,11 @@
 
 ## 概述 <a id="overview"></a>
 
-PXC指的是PX-Central监控套件。它包括以下组件。
+PXC指的是PX-Central监控套件。它包括以下组件:
+
+| 组件 |  |
+| :--- | :--- |
+| Lighthouse |  |
 
 1. Lighthouse
 2. Prometheus
