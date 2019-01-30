@@ -34,10 +34,11 @@ $ kubctl apply -f px-yamls/mon/lighthouse.yaml
 $ kubctl apply -f px-yamls/mon/prometheus-operator.yaml
 ```
 
-### 4. 部署prometheus rules
+### 4. 部署prometheus配置
 
 ```text
 $ kubctl apply -f px-yamls/mon/prometheus-rules.yaml
+$ kubctl apply -f px-yamls/mon/prometheus-cluster.yaml
 ```
 
 ### 5. 部署prometheus service monitor
@@ -55,20 +56,18 @@ $ kubctl apply -f px-yamls/mon/prometheus-cluster.yaml
 ### 7. 部署grafana图形界面
 
 ```text
-$ kubectl apply -f 
+$ kubectl apply -f px-yamls/mon/grafana-rules.yaml
+$ kubectl apply -f px-yamls/mon/grafana-deploy.yaml
 ```
 
-
-
-### 6. 检查部署
+### 8. 部署alertmanager
 
 ```text
-kubectl -n kube-system get deployments -o wide
-
-kubectl -n kube-system get pods -o wide
+$ kubectl apply -f px-yamls/mon/alertmanager.yaml
+$ kubectl apply -f px-yamls/mon/alertmanager-cluster.yaml
 ```
 
-### 7. 访问Grafana
+### 9.访问grafana
 
 `http://<master_ip>:30950`
 
