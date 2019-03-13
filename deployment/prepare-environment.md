@@ -5,7 +5,7 @@ description: Prepare Environment
 # 环境准备
 
 {% hint style="danger" %}
-道云只支持物理机里运行PX生产，不支持任何虚拟机里运行PX生产。
+道云只支持物理机作为PX的生产环境，**不支持虚拟机作为PX的生产环境。**
 {% endhint %}
 
 ## 硬件配置
