@@ -17,7 +17,7 @@
 | 3. | vCPU单槽位 | vCPU配置单槽位\(Socket\) |
 | 4 | 内存资源独享 | 虚机的内存资源必须全部预留锁定\(Reserve and Lock\) |
 | 5 | 根盘资源独享 | 虚机的根盘必须是厚置备置零\(Thick Provisioning Eager Zero\) |
-| 6 | 数据盘资源独享 | 虚机的数据盘必须是PCI穿透\(PCI Pass Through\)的RAID卡或者是裸设备映射\(Raw Device Mapping\) |
+| 6 | 数据盘资源独享 | 虚机的数据盘必须是RAID卡的PCI穿透\(PCI Pass Through\)或者是裸设备映射\(Raw Device Mapping\) |
 | 7 | 优先响应 | 虚机的延迟敏感度\(Latency Sensitivity\)必须设置为高\(High\) |
 | 8 | NUMA绑定 | 虚机的必须锁定在一个NUMA NODE上 |
 | 9 | 网卡独享 | 虚机里的PX使用PCI穿透的网卡 |
@@ -36,7 +36,7 @@
 
 ![](../../.gitbook/assets/image%20%284%29.png)
 
-### 数据盘RAID卡PCI穿透配置
+### 数据盘RAID卡PCI穿透
 
 ![](../../.gitbook/assets/image%20%286%29.png)
 
