@@ -18,7 +18,7 @@
 | :--- | :--- | :--- |
 | 1 | 虚机环境独享 | PX的存储节点必须跑在独立的虚机里。这个虚机不跑任何其它的业务。 |
 | 2 | vCPU资源独享 | 虚机的vCPU资源必须全部预留\(Reserve\) |
-| 3 | vCPU单槽位 | vCPU配置单槽位\(Socket\) |
+| 3 | vCPU单槽位 | vCPU配置单槽位\(Socket\)，因为PX进程只能识别一个槽位的vCPU |
 | 4 | 内存资源独享 | 虚机的内存资源必须全部预留锁定\(Reserve and Lock\) |
 | 5 | 根盘资源独享 | 虚机的根盘必须是厚置备置零\(Thick Provisioning Eager Zero\) |
 | 6 | 数据盘资源独享 | 虚机的数据盘必须是RAID卡的PCI穿透\(PCI Pass Through\) 或者是裸设备映射\(Raw Device Mapping\) |
