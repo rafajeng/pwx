@@ -26,11 +26,11 @@
 
 ### vCPU配置
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 ### 内存配置
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 ### 根盘配置
 
@@ -38,11 +38,11 @@
 
 ### 数据盘RAID卡PCI穿透
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 ### 延迟敏感度配置
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 ### NUMA NODE绑定
 
