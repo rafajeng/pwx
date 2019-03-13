@@ -4,6 +4,10 @@ description: Prepare Environment
 
 # 环境准备
 
+{% hint style="danger" %}
+道云只支持物理机里运行PX生产，不支持任何虚拟机里运行PX生产。
+{% endhint %}
+
 ## 硬件配置
 
 | 设备 | 最低PoC要求 | 最低生产要求 | 推荐生产配置 |
