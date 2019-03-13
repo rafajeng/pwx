@@ -8,6 +8,7 @@
   * [部署PX](deployment/deploy-px.md)
   * [创建SC](deployment/create-storage-class.md)
   * [其它场景](deployment/other-scenarios/README.md)
+    * [VMware虚机环境](deployment/other-scenarios/xu-ji-huan-jing.md)
     * [K8S CSI](deployment/other-scenarios/k8s-csi.md)
     * [独立存储节点](deployment/other-scenarios/standalone-storage-node.md)
     * [Swarm和Mesos](deployment/other-scenarios/swarm-and-mesos.md)
