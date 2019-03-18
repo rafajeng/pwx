@@ -38,6 +38,7 @@
   * [性能数据](performance/performance-data.md)
   * [全局调教](performance/global-tuning.md)
   * [卷调教](performance/volume-tuning.md)
+  * [RAID卡配置](performance/raid-ka-pei-zhi.md)
 * [公有云](public-cloud.md)
 * [CLI](cli.md)
 * [工具](tools/README.md)
