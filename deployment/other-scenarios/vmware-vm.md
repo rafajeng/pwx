@@ -63,8 +63,8 @@
         <p>&#x662F;RAID&#x5361;&#x7684;PCI&#x7A7F;&#x900F;(PCI Pass Through)
           <br />&#x6216;&#x8005;&#x662F;&#x88F8;&#x8BBE;&#x5907;&#x6620;&#x5C04;(Raw Device
           Mapping)</p>
-        <p>&#x6216;&#x8005;&#x662F;&#x6765;&#x81EA;<b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x7F6E;&#x96F6;(Thick
-          Provisioning Eager Zero)</p>
+        <p><b>&#x6216;&#x8005;&#x865A;&#x62DF;&#x76D8;VMDK&#x7528;dd&#x5199;&#x96F6;</b>
+        </p>
       </td>
     </tr>
     <tr>
@@ -85,64 +85,15 @@
       <td style="text-align:left">&#x865A;&#x673A;&#x91CC;&#x7684;PX&#x4F7F;&#x7528;PCI&#x7A7F;&#x900F;&#x7684;&#x7F51;&#x5361;</td>
     </tr>
   </tbody>
-</table>## 数据盘类型
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#x6570;&#x636E;&#x76D8;&#x7C7B;&#x578B;</th>
-      <th style="text-align:left">PX&#x8FD0;&#x884C;&#x6548;&#x679C;</th>
-      <th style="text-align:left">&#x9053;&#x4E91;&#x652F;&#x6301;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">RAID&#x5361;PCI&#x7A7F;&#x900F;</td>
-      <td style="text-align:left">&#x7A33;&#x5B9A;</td>
-      <td style="text-align:left">&#x652F;&#x6301;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>&#x975E;&#x5171;&#x4EAB;</b>&#x7684;Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x7F6E;&#x96F6;</p>
-        <p>(Thick Provisioning Eager Zero&#xFF09;</p>
-      </td>
-      <td style="text-align:left">&#x7A33;&#x5B9A;</td>
-      <td style="text-align:left">&#x652F;&#x6301;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x5EF6;&#x8FDF;&#x7F6E;&#x96F6;</p>
-        <p>(Thick Provisioning Lazy Zero)</p>
-      </td>
-      <td style="text-align:left">&#x4E0D;&#x7A33;&#x5B9A;</td>
-      <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x7CBE;&#x7B80;&#x5236;&#x5907;</p>
-        <p>(Thin Provisioning)</p>
-      </td>
-      <td style="text-align:left">&#x4E0D;&#x7A33;&#x5B9A;</td>
-      <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x76D8;</td>
-      <td
-      style="text-align:left"> <b>&#x6781;&#x4E0D;&#x7A33;&#x5B9A;</b>
-        </td>
-        <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
-    </tr>
-  </tbody>
-</table>## 如果数据盘是非共享Datastore的精简制备，如何转换为厚置备置零
-
-有两个方法
-
-1. Migrate虚机到另一台EXi主机，并选择数据盘类型为厚置备置零\(Thick Provisioning Eager Zero\)
-2. 在部署PX前用dd给数据盘写零。注意：此操作会清除该数据盘上所有的数据。
+</table>## 虚拟盘\(VMDK\)如何用dd写零
 
 ```text
 dd if=/dev/zero of=/dev/sdX bs=1M oflag=sync status=progress
 ```
+
+{% hint style="danger" %}
+如果dd失败报错，或者dd速度小于50MB/s, 则此虚拟盘不可用
+{% endhint %}
 
 ## 网卡类型
 
