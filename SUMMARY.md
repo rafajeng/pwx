@@ -36,7 +36,7 @@
   * [Parsyncfp](backup/parsyncfp.md)
 * [性能](performance/README.md)
   * [性能数据](performance/xing-neng-shu-ju.md)
-  * [全局调教](performance/quan-ju-tiao-jiao.md)
+  * [全局调教](performance/global-tuning.md)
   * [卷调教](performance/juan-ji-bie-tiao-jiao.md)
 * [公有云](public-cloud.md)
 * [CLI](cli.md)
