@@ -87,13 +87,21 @@
   </tbody>
 </table>## 虚拟盘\(VMDK\)如何用dd写零
 
+{% hint style="danger" %}
+对裸设备做dd写零会彻底抹除数据，请务必确认是空盘，而且在PX安装之前操作。如果dd失败报错，或者dd速度小于50MB/s, **则此虚拟盘不可用。**
+{% endhint %}
+
 ```text
 dd if=/dev/zero of=/dev/sdX bs=1M oflag=sync status=progress
 ```
 
-{% hint style="danger" %}
-如果dd失败报错，或者dd速度小于50MB/s, **则此虚拟盘不可用**
-{% endhint %}
+如果盘上已经有数据，例如根盘，请按以下操作。
+
+```text
+dd if=/dev/zero of=/dd.file bs=1M oflag=sync status=progress
+# 切勿重启
+rm -f /dd.file
+```
 
 ## 网卡类型
 
