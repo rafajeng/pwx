@@ -92,7 +92,7 @@ dd if=/dev/zero of=/dev/sdX bs=1M oflag=sync status=progress
 ```
 
 {% hint style="danger" %}
-如果dd失败报错，或者dd速度小于50MB/s, 则此虚拟盘不可用
+如果dd失败报错，或者dd速度小于50MB/s, **则此虚拟盘不可用**
 {% endhint %}
 
 ## 网卡类型
