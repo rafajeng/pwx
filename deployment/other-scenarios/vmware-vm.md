@@ -126,9 +126,10 @@
       <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
     </tr>
     <tr>
-      <td style="text-align:left">&#x5171;&#x4EAB;Datastore&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x76D8;</td>
+      <td style="text-align:left"><b>&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x76D8;</td>
       <td
-      style="text-align:left">&#x6781;&#x4E0D;&#x7A33;&#x5B9A;</td>
+      style="text-align:left"> <b>&#x6781;&#x4E0D;&#x7A33;&#x5B9A;</b>
+        </td>
         <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
     </tr>
   </tbody>
