@@ -61,44 +61,49 @@ PX启动后/etc/pwx/config.json会有如下显示：
 
 ```
 
-
+## copy\_on\_write=0
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">rt_opts&#x53C2;&#x6570;</th>
-      <th style="text-align:left">&#x9002;&#x7528;&#x7248;&#x672C;</th>
-      <th style="text-align:left">&#x64CD;&#x4F5C;</th>
-      <th style="text-align:left">&#x6548;&#x679C;</th>
-      <th style="text-align:left">&#x4EE3;&#x4EF7;</th>
+      <th style="text-align:left"></th>
+      <th style="text-align:left"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">copy_on_write=0</td>
-      <td style="text-align:left">
-        <p>1.7.2</p>
-        <p>&#x4EE5;&#x4E0A;</p>
-      </td>
-      <td style="text-align:left">&#x6DFB;&#x52A0;nocow&#x548C;nosum&#x5230;mount&#x5C5E;&#x6027;&#x91CC;</td>
-      <td
-      style="text-align:left">&#x7981;&#x7528;Copy On Write&#x548C;&#x6821;&#x9A8C;&#x7801;</td>
-        <td
-        style="text-align:left">&#x964D;&#x4F4E;&#x6570;&#x636E;&#x7EA0;&#x9519;&#x80FD;&#x79BB;&#x5F00;&#x3002;</td>
+      <td style="text-align:left">&#x7248;&#x672C;&#x8981;&#x6C42;</td>
+      <td style="text-align:left">1.7.2&#x4EE5;&#x4E0A;</td>
     </tr>
     <tr>
-      <td style="text-align:left">nossd=1</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;</td>
+      <td style="text-align:left">&#x6DFB;&#x52A0;nocow&#x548C;nosum&#x5230;BTFS&#x7684;mount&#x5C5E;&#x6027;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#x6548;&#x679C;</td>
+      <td style="text-align:left">&#x7981;&#x7528;Copy On Write&#x548C;&#x6821;&#x9A8C;&#x7801;&#xFF0C;&#x51CF;&#x5C11;overhead&#x548C;&#x5EF6;&#x8FDF;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#x4EE3;&#x4EF7;</td>
+      <td style="text-align:left">BTFS&#x5931;&#x53BB;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x81EA;&#x7EA0;&#x9519;&#x7684;&#x80FD;&#x529B;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#x8003;&#x91CF;</td>
       <td style="text-align:left">
-        <p>1.7.3</p>
-        <p>&#x4EE5;&#x4E0A;</p>
+        <p>&#x5E38;&#x89C1;ext4/xfs&#x4E5F;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x81EA;&#x7EA0;&#x9519;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+        <p>&#x5982;&#x679C;&#x5BA2;&#x6237;&#x63A5;&#x53D7;ext4/xfs&#x7684;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x80FD;&#x63A5;&#x53D7;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;</p>
       </td>
-      <td style="text-align:left">&#x6DFB;&#x52A0;nossd&#x5230;mount&#x5C5E;&#x6027;&#x91CC;</td>
-      <td style="text-align:left">
-        <p>&#x5173;&#x95ED;SSD&#x7A7A;&#x95F4;&#x4F18;&#x5316;</p>
-        <p>&#x907F;&#x514D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x788E;&#x7247;&#x5316;&#xFF0C;</p>
-      </td>
-      <td style="text-align:left">&#x51CF;&#x5C11;SSD&#x5BFF;&#x547D;</td>
     </tr>
   </tbody>
-</table> 
+</table>## nossd=1
+
+|  |  |
+| :--- | :--- |
+| 版本要求 | 1.7.3以上 |
+| 操作 | 添加nossd到BTFS的mount属性 |
+| 效果 | 禁用SSD优先写连续空间，避免文件系统碎片化 |
+| 代价 | 理论上会减少SSD的寿命 |
+| 考量 | 建议性能优先 |
+
+ 
 
