@@ -96,7 +96,7 @@ $ /opt/pwx/bin/runc exec portworx mount -l | grep btrfs
     </tr>
     <tr>
       <td style="text-align:left">&#x64CD;&#x4F5C;</td>
-      <td style="text-align:left">&#x6DFB;&#x52A0;nocow&#x548C;nosum&#x5230;BTFS&#x7684;mount&#x5C5E;&#x6027;</td>
+      <td style="text-align:left">&#x6DFB;&#x52A0;nodatacow&#x548C;nodatasum&#x5230;BTFS&#x7684;mount&#x5C5E;&#x6027;</td>
     </tr>
     <tr>
       <td style="text-align:left">&#x6548;&#x679C;</td>
