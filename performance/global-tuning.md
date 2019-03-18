@@ -2,6 +2,8 @@
 
 {% hint style="warning" %}
 PX性能的一个主要瓶颈是其底层的BTFS。全局调教目的是提升BTFS的性能。 
+
+添加全局调教参数必须要宕机时间\(Downtime\)
 {% endhint %}
 
 ## BTFS在PX架构里的功用和带来的限制
@@ -49,7 +51,10 @@ PX目前提供两个全局调教参数，关闭部分BTFS功能，以提升其�
 
 PX启动后/etc/pwx/config.json会有如下显示：
 
+{% code-tabs %}
+{% code-tabs-item title="/etc/pwx/config.json" %}
 ```text
+
 {
 ...
     "rt_opts": {
@@ -60,6 +65,8 @@ PX启动后/etc/pwx/config.json会有如下显示：
 }
 
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## copy\_on\_write=0
 
