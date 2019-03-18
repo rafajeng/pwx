@@ -39,7 +39,7 @@ description: Prepare Environment
 
 ### RAID卡配置 <a id="raid-configuration"></a>
 
-如果需要最轻松的运维体验，建议数据盘做RAID1,5,6；如果需要空间最大化，建议数据盘做单盘RAID0。如果RAID卡有电池保护的读写Cache，建议给物理硬盘打开，提升小IO的处理效率。不建议给SSD使用RAID Cache。
+如果需要最轻松的运维体验，建议数据盘做RAID1,5,6；如果需要空间最大化，建议数据盘做单盘RAID0。**如果RAID卡有电池保护的读写Cache，建议给物理硬盘打开，提升小IO的处理效率**。不建议给SSD使用RAID Cache。
 
 {% hint style="warning" %}
 当前不建议使用所谓的RAID卡**直通模式。**原因是各家硬件厂商对这种模式的技术实现各不相同，成熟度也不同。为了保证部署质量，道云建议给所有的数据盘都做RAID。

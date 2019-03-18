@@ -37,7 +37,7 @@
 * [性能](performance/README.md)
   * [性能数据](performance/xing-neng-shu-ju.md)
   * [全局调教](performance/quan-ju-tiao-jiao.md)
-  * [卷级别调教](performance/juan-ji-bie-tiao-jiao.md)
+  * [卷调教](performance/juan-ji-bie-tiao-jiao.md)
 * [公有云](public-cloud.md)
 * [CLI](cli.md)
 * [工具](tools/README.md)
