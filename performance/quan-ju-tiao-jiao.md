@@ -18,7 +18,9 @@ PX性能的一个主要瓶颈是其底层的BTFS。全局调教目的是提升BT
 
 ## BTFS对kernel版本的依赖
 
+BTFS的发展同Linux kernel紧密联合在一起, 最新的功能和补丁都在合并在最新的Linux kernel里。所以要升级BTFS必须升级Linux kernel。
 
+BTFS
 
  
 
