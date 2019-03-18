@@ -70,6 +70,16 @@ PX启动后/etc/pwx/config.json会有如下显示：
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+PX启动后查看btrfs的mount属性
+
+```text
+$ /opt/pwx/bin/runc exec portworx mount -l | grep btrfs
+
+/dev/sd on /var/.px/0 type btrfs 
+(rw,noatime,nodatasum,nodatacow,nossd,flushoncommit,space_cache,subvolid=5,subvol=/) 
+[u=4831a814-5851-4fff-9de5-e610f3e9ffba,i=9196b959-21a4-472f-969a-82428108953c,n=2,pxpool=0]
+```
+
 ## copy\_on\_write=0
 
 <table>
