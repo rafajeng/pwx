@@ -12,6 +12,8 @@
 
 {% hint style="info" %}
 指导原则是要求**最高级别的资源优先级**，禁止其它任何虚机同PX的虚机抢夺资源。
+
+有\*的要求是尽力而为
 {% endhint %}
 
 <table>
@@ -81,11 +83,6 @@
       <td style="text-align:left">9*</td>
       <td style="text-align:left">&#x7F51;&#x5361;&#x72EC;&#x4EAB;</td>
       <td style="text-align:left">&#x865A;&#x673A;&#x91CC;&#x7684;PX&#x4F7F;&#x7528;PCI&#x7A7F;&#x900F;&#x7684;&#x7F51;&#x5361;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">*</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">*&#x5C3D;&#x529B;&#x800C;&#x4E3A;</td>
     </tr>
   </tbody>
 </table>## 虚机数据盘类型
