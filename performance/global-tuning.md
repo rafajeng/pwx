@@ -54,7 +54,6 @@ PX启动后/etc/pwx/config.json会有如下显示：
 {% code-tabs %}
 {% code-tabs-item title="/etc/pwx/config.json" %}
 ```text
-
 {
 ...
     "rt_opts": {
@@ -63,7 +62,6 @@ PX启动后/etc/pwx/config.json会有如下显示：
     },
 ...
 }
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
