@@ -95,7 +95,7 @@ PX启动后/etc/pwx/config.json会有如下显示：
     <tr>
       <td style="text-align:left">&#x8003;&#x91CF;</td>
       <td style="text-align:left">
-        <p>&#x5E38;&#x89C1;ext4/xfs&#x4E5F;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x81EA;&#x7EA0;&#x9519;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+        <p>&#x5E38;&#x89C1;&#x7684;ext4/xfs&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E5F;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x81EA;&#x7EA0;&#x9519;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
         <p>&#x5982;&#x679C;&#x5BA2;&#x6237;&#x63A5;&#x53D7;ext4/xfs&#x7684;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x80FD;&#x63A5;&#x53D7;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;</p>
       </td>
     </tr>
