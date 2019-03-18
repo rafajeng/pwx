@@ -73,8 +73,8 @@ PX启动后/etc/pwx/config.json会有如下显示：
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"></th>
-      <th style="text-align:left"></th>
+      <th style="text-align:left">&#x89C4;&#x683C;</th>
+      <th style="text-align:left">&#x7EC6;&#x8282;</th>
     </tr>
   </thead>
   <tbody>
@@ -104,7 +104,7 @@ PX启动后/etc/pwx/config.json会有如下显示：
   </tbody>
 </table>## nossd=1
 
-|  |  |
+| 规格 | 细节 |
 | :--- | :--- |
 | 版本要求 | 1.7.3以上 |
 | 操作 | 添加nossd到BTFS的mount属性 |
