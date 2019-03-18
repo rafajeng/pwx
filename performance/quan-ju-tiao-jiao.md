@@ -26,9 +26,9 @@ RHEL/CentOS官方的kernel版本都非常保守。RHEL/CentOS 7.x 的kernel版�
 
 **如果使用的是CentOS, 建议升级kernel到elrepo.org的4.4版本以上。** 
 
-## 全局调教参数rt\_opts
+## 添加全局调教参数：rt\_opts
 
-在PX的安装参数里添加rt\_opts, 例如
+PX目前提供两个全局调教参数，关闭部分BTFS功能，以提升其性能。方法是在PX的启动参数里添加rt\_opts, 如下：
 
 {% code-tabs %}
 {% code-tabs-item title="px-opts.txt" %}
@@ -47,7 +47,19 @@ RHEL/CentOS官方的kernel版本都非常保守。RHEL/CentOS 7.x 的kernel版�
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+PX启动后/etc/pwx/config.json会有如下显示：
 
+```text
+{
+...
+    "rt_opts": {
+      "copy_on_write": 0,
+      "nossd": 1
+    },
+...
+}
+
+```
 
 
 
