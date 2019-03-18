@@ -85,14 +85,14 @@
       <td style="text-align:left">&#x865A;&#x673A;&#x91CC;&#x7684;PX&#x4F7F;&#x7528;PCI&#x7A7F;&#x900F;&#x7684;&#x7F51;&#x5361;</td>
     </tr>
   </tbody>
-</table>## 虚机数据盘类型
+</table>## 数据盘类型
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#x7C7B;&#x578B;</th>
-      <th style="text-align:left">&#x6548;&#x679C;</th>
-      <th style="text-align:left">&#x652F;&#x6301;</th>
+      <th style="text-align:left">&#x6570;&#x636E;&#x76D8;&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">PX&#x8FD0;&#x884C;&#x6548;&#x679C;</th>
+      <th style="text-align:left">&#x9053;&#x4E91;&#x652F;&#x6301;</th>
     </tr>
   </thead>
   <tbody>
@@ -132,9 +132,40 @@
         <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
     </tr>
   </tbody>
-</table>
+</table>## 如果数据盘是非共享Datastore的精简制备，如何转换为厚置备置零
 
-## 配置截图示例
+有两个方法
+
+1. Migrate虚机到另一台EXi主机，并选择数据盘类型为厚置备置零\(Thick Provisioning Eager Zero\)
+2. 在部署PX前用dd给数据盘写零。注意：此操作会清除该数据盘上所有的数据。
+
+```text
+dd if=/dev/zero of=/dev/sdX bs=1M oflag=sync status=progress
+```
+
+## 网卡类型
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x7F51;&#x5361;&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x989D;&#x5916;&#x8981;&#x6C42;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">&#x7F51;&#x5361;PCI&#x7A7F;&#x900F;</td>
+      <td style="text-align:left">&#x6700;&#x4F73;&#xFF0C;&#x5EF6;&#x8FDF;&#x6700;&#x4F4E;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">VMXNET3&#x865A;&#x62DF;&#x7F51;&#x5361;</td>
+      <td style="text-align:left">
+        <p>&#x865A;&#x673A;&#x5185;&#x5FC5;&#x987B;&#x5B89;&#x88C5;vmtools&#xFF1B;</p>
+        <p>&#x5FC5;&#x987B;&#x5168;&#x9884;&#x7559;&#x865A;&#x673A;&#x7684;CPU&#x548C;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#xFF0C;&#x7F51;&#x7EDC;&#x5EF6;&#x8FDF;&#x624D;&#x80FD;&#x7A33;&#x5B9A;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## 配置截图示例
 
 ### vCPU配置
 
