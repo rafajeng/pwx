@@ -61,7 +61,7 @@
         <p>&#x662F;RAID&#x5361;&#x7684;PCI&#x7A7F;&#x900F;(PCI Pass Through)
           <br />&#x6216;&#x8005;&#x662F;&#x88F8;&#x8BBE;&#x5907;&#x6620;&#x5C04;(Raw Device
           Mapping)</p>
-        <p>&#x6216;&#x8005;&#x662F;&#x6765;&#x81EA;<b>&#x975E;&#x5171;&#x4EAB;</b>&#x7684;Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x7F6E;&#x96F6;(Thick
+        <p>&#x6216;&#x8005;&#x662F;&#x6765;&#x81EA;<b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x7F6E;&#x96F6;(Thick
           Provisioning Eager Zero)</p>
       </td>
     </tr>
@@ -88,7 +88,56 @@
       <td style="text-align:left">*&#x5C3D;&#x529B;&#x800C;&#x4E3A;</td>
     </tr>
   </tbody>
-</table>## 配置截图示例
+</table>## 虚机数据盘类型
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x6548;&#x679C;</th>
+      <th style="text-align:left">&#x652F;&#x6301;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">RAID&#x5361;PCI&#x7A7F;&#x900F;</td>
+      <td style="text-align:left">&#x7A33;&#x5B9A;</td>
+      <td style="text-align:left">&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>&#x975E;&#x5171;&#x4EAB;</b>&#x7684;Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x7F6E;&#x96F6;</p>
+        <p>(Thick Provisioning Eager Zero&#xFF09;</p>
+      </td>
+      <td style="text-align:left">&#x7A33;&#x5B9A;</td>
+      <td style="text-align:left">&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x539A;&#x7F6E;&#x5907;&#x5EF6;&#x8FDF;&#x7F6E;&#x96F6;</p>
+        <p>(Thick Provisioning Lazy Zero)</p>
+      </td>
+      <td style="text-align:left">&#x4E0D;&#x7A33;&#x5B9A;</td>
+      <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>&#x975E;&#x5171;&#x4EAB;</b>Datastore&#x7684;&#x7CBE;&#x7B80;&#x5236;&#x5907;</p>
+        <p>(Thin Provisioning)</p>
+      </td>
+      <td style="text-align:left">&#x4E0D;&#x7A33;&#x5B9A;</td>
+      <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#x5171;&#x4EAB;Datastore&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x76D8;</td>
+      <td
+      style="text-align:left">&#x6781;&#x4E0D;&#x7A33;&#x5B9A;</td>
+        <td style="text-align:left">&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+  </tbody>
+</table>
+
+## 配置截图示例
 
 ### vCPU配置
 
