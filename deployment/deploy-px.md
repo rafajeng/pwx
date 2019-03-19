@@ -74,7 +74,7 @@ Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不�
 ### 2. 创建yaml文件 <a id="step-2-yamls"></a>
 
 ```text
-$ pxtools/cli/px-yaml.sh oci --file ./px-opts.txt --registry daocloud.io 
+$ pxtools/cli/px-yaml.sh oci --file ./px-opts.txt --registry daocloud.io --tag 2.0.3.1
 Created file as: ./px-yamls/oci/oci-monitor.yaml
 ```
 
@@ -83,7 +83,8 @@ px-yaml.sh oci 常用参数:
 | 参数 | 默认值 | 解释 |
 | :--- | :--- | :--- |
 | -f, --file | ./px-opts.txt | px-opts文件路径 |
-| -r, registry | daocloud.io/portworx | 镜像仓库地址 |
+| -r, --registry | daocloud.io/portworx | 镜像仓库地址 |
+| -t,--tag | latest | PX版本 |
 | -s,--secret | NULL | k8s镜像仓库登陆秘钥 |
 
 ### 3. 部署oci-monitor容器 <a id="step-3-oci-monitor"></a>
