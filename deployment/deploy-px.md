@@ -85,7 +85,9 @@ px-yaml.sh oci 常用参数:
 | -f, --file | ./px-opts.txt | px-opts文件路径 |
 | -r, --registry | daocloud.io/portworx | 镜像仓库地址 |
 | -t,--tag | latest | PX版本 |
+| -p,--policy | IfNotPresent | 镜像拉取策略 |
 | -s,--secret | NULL | k8s镜像仓库登陆秘钥 |
+| -c,--csi | false | 使用CSI |
 
 ### 3. 部署oci-monitor容器 <a id="step-3-oci-monitor"></a>
 
