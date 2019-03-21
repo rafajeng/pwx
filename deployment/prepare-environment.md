@@ -85,7 +85,7 @@ PX使用本地的时间和时区。 **所有的节点必须严格的时间同步
 
 ### 持久化Journal日志
 
-保证journalctl在主机重启后仍然能输出历史日志。
+保证**journalctl**在主机重启后仍然能输出历史日志。参考 [https://gist.github.com/JPvRiel/b7c185833da32631fa6ce65b40836887](https://gist.github.com/JPvRiel/b7c185833da32631fa6ce65b40836887)
 
 ```text
 mkdir -p /var/log/journal
@@ -99,7 +99,7 @@ systemctl restart systemd-journald
 
 ### 启用kernel dump
 
-安装CentOS的时候, kdump是默认启用的。如果不小心禁用了，用以下方法启用：
+安装CentOS的时候, **kdump**是默认启用的。如果不小心禁用了，用以下方法启用：
 
 ```text
 $ yum install kexec-tools
