@@ -74,7 +74,7 @@ Deamonset默认所有节点的**配置一致**。所以如果有硬件配置不�
 ### 2. 创建yaml文件 <a id="step-2-yamls"></a>
 
 ```text
-$ pxtools/cli/px-yaml.sh oci --file ./px-opts.txt --registry daocloud.io --tag 2.0.3.1
+$ pxtools/cmd/px-yaml.sh oci --file ./px-opts.txt --registry daocloud.io --tag 2.0.3.1
 Created file as: ./px-yamls/oci/oci-monitor.yaml
 ```
 

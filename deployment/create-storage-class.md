@@ -19,7 +19,7 @@ Pxtool工具集里提供了常用的SC的yaml文件。
 ### 1. 创建yaml文件
 
 ```text
-$ pxtools/cli/px-yaml.sh sc
+$ pxtools/cmd/px-yaml.sh sc
 Created file at ./px-yamls/sc/
 ```
 
