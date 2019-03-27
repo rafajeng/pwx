@@ -20,7 +20,7 @@ PXC指的是PX-Central监控套件。它包括以下组件:
 ### 1. 创建yaml文件
 
 ```text
-$ pxtools/cli/px-yamls.sh mon --registry daocloud.io/portworx 
+$ pxtools/cmd/px-yamls.sh mon --registry daocloud.io/portworx 
 Created file at /root/px-yamls/mon/
 ```
 

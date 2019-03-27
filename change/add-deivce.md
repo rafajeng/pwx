@@ -1,3 +1,7 @@
+---
+description: Add data device
+---
+
 # 添加数据盘
 
 ## 概述 <a id="overview"></a>
@@ -51,4 +55,17 @@ Drive add: Storage rebalance complete
 
 $ pxctl service drive show
 ```
+
+### 5. 退出维护模式
+
+```text
+$ pxctl service maintenance --exit
+Exiting maintenance mode...
+
+$ journalctl -fu portworx
+
+$ pxctl status
+```
+
+
 
