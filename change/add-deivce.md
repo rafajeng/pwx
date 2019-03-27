@@ -60,11 +60,12 @@ $ pxctl service drive show
 
 ```text
 $ pxctl service maintenance --exit
-Exiting maintenance mode...
+Exsiting maintenance mode...
 
 $ journalctl -fu portworx
 
 $ pxctl status
+Status: PX is operational
 ```
 
 
