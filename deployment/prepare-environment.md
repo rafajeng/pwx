@@ -5,8 +5,39 @@ description: Prepare Environment
 # 环境准备
 
 {% hint style="danger" %}
-道云只支持物理机作为PX的生产环境，**不支持虚拟机作为PX的生产环境。**
+道云只支持物理机作为PX的生产环境，**不支持任何虚拟机作为PX的生产环境。**
 {% endhint %}
+
+## 内核依赖包 <a id="dependency"></a>
+
+{% code-tabs %}
+{% code-tabs-item title="必须安装" %}
+```text
+# CentOS原装kernel
+$ yum install kernel-headers-$(uname -r) kernel-devel-$(uname -r)
+
+# Elrepo的 LTS kernel
+$ yum install kernel-lt-headers-$(uname -r) kernel-lt-devel-$(uname -r)
+
+# Elrepo的 MainLine kernel
+$ yum install kernel-ml-headers-$(uname -r) kernel-ml-devel-$(uname -r)
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+## 工具包
+
+{% code-tabs %}
+{% code-tabs-item title="建议安装" %}
+```text
+$ yum install curl net-tools bind-utils sysstat chrony
+
+$ yum install -y wget telnet traceroute lsof zip unzip \
+ipvsadm open-vm-tools bash-completion gdisk parted \
+pciutils smartmontools psmisc
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 硬件配置
 
