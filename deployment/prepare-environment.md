@@ -19,7 +19,7 @@ $ yum install kernel-headers-$(uname -r) kernel-devel-$(uname -r)
 # Elrepo的 LTS kernel
 $ yum install kernel-lt-headers-$(uname -r) kernel-lt-devel-$(uname -r)
 
-# Elrepo的 MainLine kernel
+# Elrepo的 Mainline kernel
 $ yum install kernel-ml-headers-$(uname -r) kernel-ml-devel-$(uname -r)
 ```
 {% endcode-tabs-item %}
