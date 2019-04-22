@@ -167,8 +167,8 @@ $ systemctl enable kdump
 {% code-tabs %}
 {% code-tabs-item title="必须安装" %}
 ```text
-$ docker pull daocloud.io/portworx/pxtools
-$ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools
+$ docker pull daocloud.io/portworx/pxtools:latest
+$ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools:latest
 '/pxtools' -> '/drop/pxtools'
   
 $ ls -lh
