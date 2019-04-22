@@ -158,32 +158,6 @@ $ systemctl enable kdump
 所有安装PX的主机名必须可以解析。建议添加解析表到/etc/hosts做静态解析
 {% endhint %}
 
-## 依赖包 <a id="dependency"></a>
-
-{% code-tabs %}
-{% code-tabs-item title="必须安装" %}
-```text
-$ yum install kernel-headers-$(uname -r)
-
-$ yum install kernel-devel-$(uname -r)
-
-$ yum install docker  
-
-$ yum install curl net-tools bind-utils sysstat chrony
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-{% code-tabs %}
-{% code-tabs-item title="建议安装" %}
-```text
-$ yum install -y wget telnet traceroute lsof zip unzip \
-ipvsadm open-vm-tools bash-completion gdisk parted \
-pciutils smartmontools psmisc
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
 ## Pxtools工具集 <a id="pxtools"></a>
 
 {% hint style="info" %}
@@ -193,6 +167,7 @@ pciutils smartmontools psmisc
 {% code-tabs %}
 {% code-tabs-item title="必须安装" %}
 ```text
+$ docker pull daocloud.io/portworx/pxtools
 $ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools
 '/pxtools' -> '/drop/pxtools'
   
