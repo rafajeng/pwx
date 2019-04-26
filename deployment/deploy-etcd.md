@@ -29,7 +29,7 @@ px-etcd.sh在**pxtools**工具集中。如何获取pxtools请参考章节”[环
 ### 1. 部署第一个节点 <a id="step1"></a>
 
 ```text
-$ bash pxtools/etcd/px-etcd.sh create 10.10.176.161
+$ bash pxtools/etcd/px-etcd.sh create --ip 10.10.176.161
 
 $ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
 member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
@@ -39,7 +39,7 @@ cluster is healthy
 ### 2. 部署第二个节点 <a id="step2"></a>
 
 ```text
-$ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
+$ bash pxtools/etcd/px-etcd.sh --ip join 10.10.176.161
 
 $ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
 member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
@@ -50,7 +50,7 @@ cluster is healthy
 ### 3. 部署第三个节点 <a id="step3"></a>
 
 ```text
-$ bash pxtools/etcd/px-etcd.sh join 10.10.176.161
+$ bash pxtools/etcd/px-etcd.sh join --ip 10.10.176.161
 
 $ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
 member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019
