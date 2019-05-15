@@ -21,7 +21,7 @@ $ pxtools/cli/px-vol.sh filter --replica 10.10.176.163
 ```
 
 {% hint style="danger" %}
-如果发现有单副本卷的数据在即将删除的PX节点上，请务必在删除PX节点前将那些卷调整为**双副本或者三副本**，具体方法请参考章节”[增减副本](../operations/change-replica-number.md)“
+如果发现有单副本卷的数据在即将删除的PX节点上，请务必在删除PX节点前将那些卷调整为**双副本或者三副本**，具体方法请参考章节”[增减副本](change-replica-number.md)“
 {% endhint %}
 
 ### 3. 删除K8S节点标签

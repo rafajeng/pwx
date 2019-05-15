@@ -39,7 +39,7 @@ cluster is healthy
 ### 2. 部署第二个节点 <a id="step2"></a>
 
 ```text
-$ bash pxtools/etcd/px-etcd.sh --ip join 10.10.176.161
+$ bash pxtools/etcd/px-etcd.sh join --ip 10.10.176.161
 
 $ /opt/pwx-etcd/bin/runc exec portworx-etcd etcdctl cluster-health
 member 4afad2f557455f4 is healthy: got healthy result from http://10.10.176.161:19019

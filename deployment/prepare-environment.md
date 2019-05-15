@@ -39,6 +39,28 @@ pciutils smartmontools psmisc
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+## Pxtools工具集 <a id="pxtools"></a>
+
+{% hint style="info" %}
+道云提供pxtools以简化PX的部署和维护。道云的PX部署步骤都需要用到pxtools里的工具。
+{% endhint %}
+
+{% code-tabs %}
+{% code-tabs-item title="必须安装" %}
+```text
+$ docker pull daocloud.io/portworx/pxtools:latest
+$ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools:latest
+'/pxtools' -> '/drop/pxtools'
+
+# 或者 
+$ git clone https://github.com/rafajeng/pxtools.git 
+     
+$ ls -lh
+drwxr-xr-x  7 root root   78 Dec  2 18:26 pxtools
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## 硬件配置
 
 | 设备 | 最低PoC要求 | 最低生产要求 | 推荐生产配置 |
@@ -157,26 +179,4 @@ $ systemctl enable kdump
 {% hint style="warning" %}
 所有安装PX的主机名必须可以解析。建议添加解析表到/etc/hosts做静态解析
 {% endhint %}
-
-## Pxtools工具集 <a id="pxtools"></a>
-
-{% hint style="info" %}
-道云提供pxtools以简化PX的部署和维护。道云的PX部署步骤都需要用到pxtools里的工具。
-{% endhint %}
-
-{% code-tabs %}
-{% code-tabs-item title="必须安装" %}
-```text
-$ docker pull daocloud.io/portworx/pxtools:latest
-$ docker run --rm -v $(pwd):/drop daocloud.io/portworx/pxtools:latest
-'/pxtools' -> '/drop/pxtools'
-
-# 或者 
-$ git clone https://github.com/rafajeng/pxtools.git 
-     
-$ ls -lh
-drwxr-xr-x  7 root root   78 Dec  2 18:26 pxtools
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 

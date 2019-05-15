@@ -38,7 +38,7 @@ Pxtools根据 ”HDD/SSD“, ”独占/共享“，”1/2/3副本“ 这三个�
 ### \*3. 删除SC
 
 ```text
-$ kubectl delete sc <SC NAME>
+$ kubectl delete -f px-yamls/sc/sc-basic.yaml
 ```
 
 ## 附录
