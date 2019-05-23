@@ -12,7 +12,7 @@ PX的核心进程跑在独立于K8S和Docker的runC容器里，名字也叫"port
 
 PX的runC容器采用了“一个supervisord监护进程带多个子进程"的技巧。
 
-## 观察portworx的runC容器
+## 查看portworx的runC容器
 
 ```text
 $ /opt/pwx/bin/runc list
@@ -20,7 +20,7 @@ ID          PID         STATUS      BUNDLE         CREATED                      
 portworx    125995      running     /opt/pwx/oci   2019-05-21T08:03:56.733504444Z   root
 ```
 
-## 观察PX的进程
+## 查看PX的进程
 
 {% code-tabs %}
 {% code-tabs-item title="在PX容器内部观察" %}
@@ -77,7 +77,7 @@ $ ps -elf | grep px | grep -v xfs | grep -v oci-mon | grep -vw lh
 | px-healthmon | 后端 | 辅助 | 健康检查 |
 | lttng | 后端 | 辅助 | debug trace日志收集 |
 
-## 监控PX进程的资源占用
+## 查看PX进程的资源占用
 
 ### CPU资源
 
