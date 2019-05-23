@@ -6,7 +6,7 @@ description: Processes
 
 ## 概述
 
-K8S里的"portowrx" pod只是负责自动化部署和健康检查。
+K8S里的"portowrx" pod只负责自动化部署和健康检查。
 
 PX的核心进程跑在独立于K8S和Docker的runC容器里，名字也叫"portworx"。其启停由systemd的portworx.service控制。
 
@@ -101,7 +101,7 @@ $ cat memusage.sh
 ##set -x
 
 ## Print header
- echo -e "Pname\t\tPID\tSize\tResid.\tShared\tData\t%"
+ echo -e "Pname\tPID\tSize\tResid.\tShared\tData\t%"
 
 ## Get the PID of the process name given as argument 1
 pidno=$( ps -C "$1" | tail -1 | awk '{print $1}' )
@@ -129,10 +129,10 @@ px-storage      127877  619237  252831  73150   515894  0.2
 
 $ bash memusage.sh px
 Pname           PID     Size    Resid.  Shared  Data    %
-px      128123  842681  39421   13099   807460  0.0
+px              128123  842681  39421   13099   807460  0.0
 
 $ bash memusage.sh px-ns
 Pname           PID     Size    Resid.  Shared  Data    %
-px-ns   126932  704909  8772    3644    685682  0.0
+px-ns           126932  704909  8772    3644    685682  0.0
 ```
 
