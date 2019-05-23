@@ -99,36 +99,38 @@ $ top -bd .10 -n 1 -c -p \
 $ cat memusage.sh
 
 #!/usr/bin/bash
-## Get the PID of the process name given as argument 1
-pidno=$( ps -C "$1" | tail -1 | awk '{print $1}' )
 
-## If the process is running, print the memory usage
-if [ -e /proc/$pidno/statm ]; then
-  ## Get the memory info
-  m=`awk '{OFS="\t";print $1,$2,$3,$6}' /proc/$pidno/statm`
-  ## Get the memory percentage
-  perc=`top -bd .10 -p $pidno -n 1  | grep $pidno | gawk '{print \$10}'`
-  ## print the results
-  echo -e "Pname PID Size Resid. Shared Data %\n$1 $pidno $m $perc" | column -t
+echo -e "Pname\tPID\tSize\tResid.\tShared\tData\t%"
+
+for i in $@; do
+  ## Get the PID of the process name given as argument 1
+  pidno=$( ps -C "$i" | tail -1 | awk '{print $1}' )
+
+  ## If the process is running, print the memory usage
+  if [ -e /proc/$pidno/statm ]; then
+
+    ## Get the memory info
+    m=`awk '{OFS="\t";print $1,$2,$3,$6}' /proc/$pidno/statm`
+
+    ## Get the memory percentage
+    perc=`top -bd .10 -p $pidno -n 1  | grep $pidno | gawk '{print \$10}'`
+
+    ## print the results
+    echo -e "$i\t$pidno\t$m\t$perc"
   ## If the process is not running
-else
-  echo "$1 is not running";
-fi
+  else
+    echo "$i is not running";
+  fi
+done
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 ```text
-$ bash memusage.sh px-storage
+$ # bash memusage.sh px-storage px px-ns | column -t
 Pname       PID     Size    Resid.  Shared  Data    %
 px-storage  127877  619237  252831  73150   515894  0.2
-
-$ bash memusage.sh px
-Pname  PID     Size    Resid.  Shared  Data    %
-px     128123  842681  39556   13099   807460  0.0
-
-$ bash memusage.sh px-ns
-Pname  PID     Size    Resid.  Shared  Data    %
-px-ns  126932  704909  8772    3644    685682  0.0
+px          128123  842681  39626   13099   807460  0.0
+px-ns       126932  704909  8836    3644    685682  0.0
 ```
 
