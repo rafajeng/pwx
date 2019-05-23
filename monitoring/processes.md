@@ -97,12 +97,8 @@ $ top -bd .10 -n 1 -c -p \
 {% code-tabs-item title="memusage.sh" %}
 ```bash
 $ cat memusage.sh
-##!/usr/bin/bash
-##set -x
 
-## Print header
- echo -e "Pname\tPID\tSize\tResid.\tShared\tData\t%"
-
+#!/usr/bin/bash
 ## Get the PID of the process name given as argument 1
 pidno=$( ps -C "$1" | tail -1 | awk '{print $1}' )
 
@@ -113,7 +109,7 @@ if [ -e /proc/$pidno/statm ]; then
   ## Get the memory percentage
   perc=`top -bd .10 -p $pidno -n 1  | grep $pidno | gawk '{print \$10}'`
   ## print the results
-  echo -e "$1\t$pidno\t$m\t$perc";
+  echo -e "Pname PID Size Resid. Shared Data %\n$1 $pidno $m $perc" | column -t
   ## If the process is not running
 else
   echo "$1 is not running";
@@ -124,15 +120,15 @@ fi
 
 ```text
 $ bash memusage.sh px-storage
-Pname           PID     Size    Resid.  Shared  Data    %
-px-storage      127877  619237  252831  73150   515894  0.2
+Pname       PID     Size    Resid.  Shared  Data    %
+px-storage  127877  619237  252831  73150   515894  0.2
 
 $ bash memusage.sh px
-Pname           PID     Size    Resid.  Shared  Data    %
-px              128123  842681  39421   13099   807460  0.0
+Pname  PID     Size    Resid.  Shared  Data    %
+px     128123  842681  39556   13099   807460  0.0
 
 $ bash memusage.sh px-ns
-Pname           PID     Size    Resid.  Shared  Data    %
-px-ns           126932  704909  8772    3644    685682  0.0
+Pname  PID     Size    Resid.  Shared  Data    %
+px-ns  126932  704909  8772    3644    685682  0.0
 ```
 
