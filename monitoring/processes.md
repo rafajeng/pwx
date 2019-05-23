@@ -77,7 +77,21 @@ F S UID         PID   PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 | px-healthmon | 后端 | 辅助 | 健康检查 |
 | lttng | 后端 | 辅助 | debug trace日志收集 |
 
-## 
+## 监控PX进程的资源占用
+
+### CPU资源
+
+```text
+# top -bd .10 -n 1 -c -p \
+"$(pgrep -d',' -f 'px-storage'),$(pgrep -d',' -f 'px-ns'),$(pgrep -d',' -f 'px ')" \
+| tail -4
+   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+128123 root      20   0 3370724 158388  52396 S  26.7  0.0 127:38.41 /usr/local/bin/px -daemon
+127877 root      20   0 2476948 987.6m 292600 S   0.0  0.2 102:13.71 /usr/local/bin/px-storage
+126932 root      20   0 2819636  35152  14576 S   0.0  0.0   0:26.48 /usr/local/bin/px-ns
+```
+
+
 
 
 
