@@ -15,7 +15,7 @@ PX的runC容器采用了“一个supervisord监护进程带多个子进程"的�
 ## 观察portworx的runC容器
 
 ```text
-# /opt/pwx/bin/runc list
+$ /opt/pwx/bin/runc list
 ID          PID         STATUS      BUNDLE         CREATED                          OWNER
 portworx    125995      running     /opt/pwx/oci   2019-05-21T08:03:56.733504444Z   root
 ```
@@ -25,7 +25,7 @@ portworx    125995      running     /opt/pwx/oci   2019-05-21T08:03:56.733504444
 {% code-tabs %}
 {% code-tabs-item title="在PX容器内部观察" %}
 ```text
-# /opt/pwx/bin/runc exec portworx ps -elf
+$ /opt/pwx/bin/runc exec portworx ps -elf
 F S UID         PID   PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 4 S root          1      0  0  80   0 - 11844 poll_s May21 ?        00:01:38 /usr/bin/python /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
 0 S root        171      1  0  80   0 - 117323 futex_ May21 ?       00:00:00 /usr/bin/lttng-relayd -o /var/lib/osd/log/px_trace
@@ -49,7 +49,7 @@ F S UID         PID   PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 {% code-tabs %}
 {% code-tabs-item title="在操作系统内观察" %}
 ```text
-# ps -elf | grep px | grep -v xfs | grep -v oci-mon | grep -vw lh
+$ ps -elf | grep px | grep -v xfs | grep -v oci-mon | grep -vw lh
 0 S root     114834 114610  0  80   0 - 882780 futex_ May21 ?       00:28:29 /px-log-tail --follow -P @ -tf  -u portworx.service -u portworx-output.service -u init.scope -n 20000 -p 88270
 0 S root     120119  74433  0  80   0 - 28177 pipe_w 20:41 pts/0    00:00:00 grep --color=auto px
 4 S root     125929      1  0  80   0 - 28824 do_wai May21 ?        00:00:00 /bin/sh -c while [ 1 ]; do cat /var/run/systemd/pxFIFO | /usr/bin/systemd-cat systemd-cat --identifier portworx; sleep 1; done
@@ -82,7 +82,7 @@ F S UID         PID   PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 ### CPU资源
 
 ```text
-# top -bd .10 -n 1 -c -p \
+$ top -bd .10 -n 1 -c -p \
 "$(pgrep -d',' -f 'px-storage'),$(pgrep -d',' -f 'px-ns'),$(pgrep -d',' -f 'px ')" \
 | tail -4
    PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
@@ -91,7 +91,48 @@ F S UID         PID   PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 126932 root      20   0 2819636  35152  14576 S   0.0  0.0   0:26.48 /usr/local/bin/px-ns
 ```
 
+### 内存资源
 
+{% code-tabs %}
+{% code-tabs-item title="memusage.sh" %}
+```bash
+$ cat memusage.sh
+##!/usr/bin/bash
+##set -x
 
+## Print header
+ echo -e "Pname\t\tPID\tSize\tResid.\tShared\tData\t%"
 
+## Get the PID of the process name given as argument 1
+pidno=$( ps -C "$1" | tail -1 | awk '{print $1}' )
+
+## If the process is running, print the memory usage
+if [ -e /proc/$pidno/statm ]; then
+  ## Get the memory info
+  m=`awk '{OFS="\t";print $1,$2,$3,$6}' /proc/$pidno/statm`
+  ## Get the memory percentage
+  perc=`top -bd .10 -p $pidno -n 1  | grep $pidno | gawk '{print \$10}'`
+  ## print the results
+  echo -e "$1\t$pidno\t$m\t$perc";
+  ## If the process is not running
+else
+  echo "$1 is not running";
+fi
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+```text
+$ bash memusage.sh px-storage
+Pname           PID     Size    Resid.  Shared  Data    %
+px-storage      127877  619237  252831  73150   515894  0.2
+
+$ bash memusage.sh px
+Pname           PID     Size    Resid.  Shared  Data    %
+px      128123  842681  39421   13099   807460  0.0
+
+$ bash memusage.sh px-ns
+Pname           PID     Size    Resid.  Shared  Data    %
+px-ns   126932  704909  8772    3644    685682  0.0
+```
 
