@@ -29,6 +29,7 @@
 * [监控](monitoring/README.md)
   * [PXC](monitoring/pxc.md)
   * [告警](monitoring/alerts.md)
+  * [进程](monitoring/processes.md)
   * [日志](monitoring/logging.md)
   * [DCE-I集成](monitoring/dcei-ji-cheng.md)
 * [备份](backup/README.md)
